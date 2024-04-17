@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audio-Agent</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="helper.js" defer></script>
+    <style>
+      td {
+        vertical-align: middle;
+        min-width: 200px;
+      }
+      audio {
+        width: 20vw;
+        min-width: 100px;
+        max-width: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+      <div class="text-center">
+        <h3> Audio-Agent:Enhancing Task Performance through Modality-Driven Prompt Optimization</h3>
+        <!-- <p class="lead fw-bold">
+          |<a
+            href="https://arxiv.org/abs/2302.03540"
+            class="btn border-white bg-white fw-bold"
+            >paper</a
+          >|
+        </p> -->
+        <p>
+
+
+        </p>
+        <!-- <p class="fst-italic mb-0">
+          Eugene Kharitonov, Damien Vincent,  Zalán Borsos, Raphaël Marinier, Sertan Girgin, Olivier Pietquin,
+          Matt Sharifi, Marco Tagliasacchi, Neil Zeghidour
+        </p> -->
+        <p><b>Anonymous Authors</b></p>
+      </div>
+      <p>
+        <b>Abstract.</b>  
+        Large Language Models have recently achieved remarkable progress in serving as controllers to interpret user instructions and select suitable pretrained tools for a variety of audio tasks. However, current LLMs, when selecting tools, only consider the user’s textual input and the functional descriptions of the available tools, neglecting valuable information within the audio modality that could aid in choosing appropriate tools. Due to the possible ambiguity of instructions, errors in selection are common. To this end, we introduce Audio-Agent, a versatile and adaptable agent framework for audio fields. It is the first system that emphasizes audio comprehension and utilizes these information to autonomously refine user-provided prompt in content and expression by one finetuned Large Language Model. Through clearer instructions, Audio-Agent empowers the controller to precisely select the best tools and enhances the performance of tasks compared with traditional text-based agent. Our framework also enables users to freely register tools and utilize any LLM as the core controller. Both subjective and objective metrics validate the effectiveness of our work.
+      </p>
+    </div>
+
+
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+      <h2 id="model-overview" style="text-align: center;">Overview</h2>
+      <div>
+      <p><br/></p>
+      <p style="text-align: center;">
+          <img src="arch.png" height="130" width="1040" class="img-fluid">
+      </p>
+      <p><br/></p>
+    </div>
+  
+  </div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <h2 id="table-of-content" style="text-align: left;">Table of Contents</h2>
+    <div>
+    <p style="text-align: left;">
+    <ul style="list-style: outside none none !important;">
+       <li><a href="#optimization" class="btn border-white bg-white fw-bold">Prompt Optimization</a></li>
+       <li><a href="#enhancement" class="btn border-white bg-white fw-bold">Task Enhancement</a></li>
+       <li><a href="#multi" class="btn border-white bg-white fw-bold">Sequential Selection</a></li>
+       <li><a href="#Pipeline" class="btn border-white bg-white fw-bold">Multi-turn Interaction</a></li>
+       
+    </ul>
+    </p>
+  </div>
+</div>
+
+    <!-- optimization -->
+    <div class="container shadow p-5 mb-5 bg-white rounded">
+      <h3>Prompt Optimization<a id="optimization"/></h3>
+
+      <p style="margin-top: 2em">
+        In this section, we provide some examples of our Prompt Optimization part. We list Raw, Raw', GT, GT', Ours. They are instructions without audio
+        feature labels (Raw), Raw with specific grammatical errors (Raw'), instructions with audio feature labels (GT), GT with specific grammatical errors (GT’), and the result of our model based on Raw' and Modality Comprehension.
+      </p>
+
+      <div class="container pt-3 table-responsive">
+        <table
+          class="table table-hover"
+          id="prompt-table"
+        >
+          <thead>
+            <tr>
+              <th style="text-align: center">Audio Sample</th>
+              <th style="text-align: center">Raw</th>
+              <th style="text-align: center">Raw'</th>
+              <th style="text-align: center">GT</th>
+              <th style="text-align: center">GT'</th>
+              <th style="text-align: center">Ours</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- enhancement -->
+    <!-- transcription -->
+    <div class="container shadow p-5 mb-5 bg-white rounded">
+      <h3>Task Enhancement - Speech Transcription <a id="enhancement"/></h3>
+
+      <p style="margin-top: 2em">
+        In this section, we provide some examples to showcase the enhancement by Audio-Agent's optimal selection of the suitable tool. Here is Speech Transcription. The Prompt is the raw input for these 2 Agent. Moreover, the tool in HuggingGPT only support English when receving the raw input, so it behaves poorly in other language.
+      </p>
+
+      <div class="container pt-3 table-responsive">
+        <table
+          class="table table-hover"
+          id="transcription"
+        >
+          <thead>
+            <tr>
+              <th style="text-align: center">Audio Sample</th>
+              <th style="text-align: center">Prompt</th>
+              <th style="text-align: center">Optimized_Prompt</th>
+              <th style="text-align: center">GT</th>
+              <th style="text-align: center">HuggingGPT</th>
+              <th style="text-align: center">Qwen-Audio</th>
+              <th style="text-align: center">Audio-Agent</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- translation -->
+    <div class="container shadow p-5 mb-5 bg-white rounded">
+      <h3>Task Enhancement - Speech Translation<a id="Translation"/></h3>
+
+      <p style="margin-top: 2em">
+        In this section, we provide some examples to showcase the enhancement by Audio-Agent's optimal selection of the suitable tool. Here is Speech Transcription. Moreover, the tool in HuggingGPT can't finish the task without language type, so we only provide examples on Qwen-Audio.
+      </p>
+      
+      <div class="container pt-3 table-responsive">
+        <table
+          class="table table-hover"
+          id="translation"
+        >
+          <thead>
+            <tr>
+              <th style="text-align: center">Audio Sample</th>
+              <th style="text-align: center">Content</th>
+              <th style="text-align: center">Prompt</th>
+              <th style="text-align: center">Optimized_Prompt</th>
+              <th style="text-align: center">Possible Answer</th>
+              <th style="text-align: center">Qwen-Audio</th>
+              <th style="text-align: center">Audio-Agent</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+              <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+              <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+              <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- enhance -->    
+    <div class="container shadow p-5 mb-5 bg-white rounded">
+      <h3>Task Enhancement - Audio Enhancement<a id="Audioenhancement"/></h3>
+
+      <p style="margin-top: 2em">
+        In this section, we provide some examples to showcase the enhancement by Audio-Agent's optimal selection of the suitable tool. Here is Audio Enhancement. Qwen-Audio lacks the ability to finish such task.
+      </p>
+
+      <div class="container pt-3 table-responsive">
+        <table
+          class="table table-hover"
+          id="audioenhance"
+        >
+          <thead>
+            <tr>
+              <th style="text-align: center">Audio Sample</th>
+              <th style="text-align: center">Prompt</th>
+              <th style="text-align: center">Optimized_Prompt</th>
+              <th style="text-align: center">HuggingGPT</th>
+              <th style="text-align: center">Audio-Agent</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+              <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+              <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- multitool -->
+    <div class="container shadow p-5 mb-5 bg-white rounded">
+      <h3>Sequential Selection<a id="multi"/></h3>
+
+      <p style="margin-top: 2em">
+        In this section, we provide some Multiple tool's selection example in Audio-Agent.
+      </p>
+
+      <div class="container pt-3 table-responsive">
+        <table
+          class="table table-hover"
+          id="multiselection"
+        >
+          <thead>
+            <tr>
+              <th style="text-align: center">Audio Sample</th>
+              <th style="text-align: center">Prompt</th>
+              <th style="text-align: center">Optimized Prompt</th>
+              <th style="text-align: center">Reply</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- pipeline -->
+    <div class="container shadow p-5 mb-5 bg-white rounded">
+      <h3>Multi-turn Interaction<a id="Pipeline"/></h3>
+
+      <p style="margin-top: 2em">
+        In this section, we provide the result in multi-turn dialogue.
+      </p>
+
+      <div class="container pt-3 table-responsive">
+        <table
+          class="table table-hover"
+          id="pipeline-table"
+        >
+          <thead>
+            <tr>
+              <th style="text-align: center">Audio Sample</th>
+              <th style="text-align: center">Enhancement</th>
+              <th style="text-align: center">Definition</th>
+              <th style="text-align: center">Transcription</th>
+              <th style="text-align: center">Translate</th>
+              <th style="text-align: center">Text to Speech</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
