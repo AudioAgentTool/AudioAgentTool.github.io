@@ -1,0 +1,1 @@
+Transcribe the Chinese speech and translate it into English text.

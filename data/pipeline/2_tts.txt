@@ -1,0 +1,1 @@
+Use the above translation as text and the enhanced wav as prompt to generate new speech.
