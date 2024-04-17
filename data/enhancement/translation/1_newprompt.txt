@@ -1,0 +1,1 @@
+Convert the German speech into English text.
