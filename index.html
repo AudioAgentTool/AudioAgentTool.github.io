@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Audio-Agent</title>
+    <title>AudioAgent</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,7 +25,7 @@
   <body>
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
       <div class="text-center">
-        <h3> Audio-Agent:Enhancing Task Performance through Modality-Driven Prompt Optimization</h3>
+        <h3> AudioAgent:Enhancing Task Performance through Modality-Driven Prompt Optimization</h3>
         <!-- <p class="lead fw-bold">
           |<a
             href="https://arxiv.org/abs/2302.03540"
@@ -45,7 +45,7 @@
       </div>
       <p>
         <b>Abstract.</b>  
-        Large Language Models have recently achieved remarkable progress in serving as controllers to interpret user instructions and select suitable pretrained tools for a variety of audio tasks. However, current LLMs, when selecting tools, only consider the user’s textual input and the functional descriptions of the available tools, neglecting valuable information within the audio modality that could aid in choosing appropriate tools. Due to the possible ambiguity of instructions, errors in selection are common. To this end, we introduce Audio-Agent, a versatile and adaptable agent framework for audio fields. It is the first system that emphasizes audio comprehension and utilizes these information to autonomously refine user-provided prompt in content and expression by one finetuned Large Language Model. Through clearer instructions, Audio-Agent empowers the controller to precisely select the best tools and enhances the performance of tasks compared with traditional text-based agent. Our framework also enables users to freely register tools and utilize any LLM as the core controller. Both subjective and objective metrics validate the effectiveness of our work.
+        Large Language Models have recently achieved remarkable progress in serving as controllers to interpret user instructions and select suitable pretrained tools for a variety of audio tasks. However, current LLMs, when selecting tools, only consider the user’s textual input and the functional descriptions of the available tools, neglecting valuable information within the audio modality that could aid in choosing appropriate tools. Due to the possible ambiguity of instructions, errors in selection are common. To this end, we introduce AudioAgent, a versatile and adaptable agent framework for audio fields. It is the first system that emphasizes audio comprehension and utilizes these information to autonomously refine user-provided prompt in content and expression by one finetuned Large Language Model. Through clearer instructions, AudioAgent empowers the controller to precisely select the best tools and enhances the performance of tasks compared with traditional text-based agent. Our framework also enables users to freely register tools and utilize any LLM as the core controller. Both subjective and objective metrics validate the effectiveness of our work.
       </p>
     </div>
 
@@ -117,7 +117,7 @@
       <h3>Task Enhancement - Speech Transcription <a id="enhancement"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples to showcase the enhancement by Audio-Agent's optimal selection of the suitable tool. Here is Speech Transcription. The Prompt is the raw input for these 2 Agent. Moreover, the tool in HuggingGPT only support English when receving the raw input, so it behaves poorly in other language.
+        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Speech Transcription. The Prompt is the raw input for these 2 Agent. Moreover, the tool in HuggingGPT only support English when receving the raw input, so it behaves poorly in other language.
       </p>
 
       <div class="container pt-3 table-responsive">
@@ -133,7 +133,7 @@
               <th style="text-align: center">GT</th>
               <th style="text-align: center">HuggingGPT</th>
               <th style="text-align: center">Qwen-Audio</th>
-              <th style="text-align: center">Audio-Agent</th>
+              <th style="text-align: center">AudioAgent</th>
             </tr>
           </thead>
           <tbody>
@@ -151,7 +151,7 @@
       <h3>Task Enhancement - Speech Translation<a id="Translation"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples to showcase the enhancement by Audio-Agent's optimal selection of the suitable tool. Here is Speech Transcription. Moreover, the tool in HuggingGPT can't finish the task without language type, so we only provide examples on Qwen-Audio.
+        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Speech Transcription. Moreover, the tool in HuggingGPT can't finish the task without language type, so we only provide examples on Qwen-Audio.
       </p>
       
       <div class="container pt-3 table-responsive">
@@ -167,7 +167,7 @@
               <th style="text-align: center">Optimized_Prompt</th>
               <th style="text-align: center">Possible Answer</th>
               <th style="text-align: center">Qwen-Audio</th>
-              <th style="text-align: center">Audio-Agent</th>
+              <th style="text-align: center">AudioAgent</th>
             </tr>
           </thead>
           <tbody>
@@ -186,7 +186,7 @@
       <h3>Task Enhancement - Audio Enhancement<a id="Audioenhancement"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples to showcase the enhancement by Audio-Agent's optimal selection of the suitable tool. Here is Audio Enhancement. Qwen-Audio lacks the ability to finish such task.
+        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Audio Enhancement. Qwen-Audio lacks the ability to finish such task.
       </p>
 
       <div class="container pt-3 table-responsive">
@@ -200,7 +200,7 @@
               <th style="text-align: center">Prompt</th>
               <th style="text-align: center">Optimized_Prompt</th>
               <th style="text-align: center">HuggingGPT</th>
-              <th style="text-align: center">Audio-Agent</th>
+              <th style="text-align: center">AudioAgent</th>
             </tr>
           </thead>
           <tbody>
@@ -217,7 +217,7 @@
       <h3>Sequential Selection<a id="multi"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some Multiple tool's selection example in Audio-Agent.
+        In this section, we provide some Multiple tool's selection example in AudioAgent.
       </p>
 
       <div class="container pt-3 table-responsive">
