@@ -43,7 +43,7 @@ function generateExampleRowCross(table_row, base_path, filename_ext, col_offset)
 
 function generatePrompt(tableId) {
   let table = document.getElementById(tableId);
-  let ext = ["_gt.wav", "_raw.txt", "_raw'.txt", "_gt.txt", "_gt'.txt", "_ours.txt"];
+  let ext = ["_gt.wav",  "_raw'.txt", "_gt.txt", "_ours.txt"];
   for (var i = 0; i < 4; i++) {
     generateExampleRow(table.rows[1 + i], "data/prompt/" + i, ext, 0);
   }
