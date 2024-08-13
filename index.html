@@ -25,7 +25,7 @@
   <body>
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
       <div class="text-center">
-        <h3> AudioAgent:Enhancing Task Performance through Modality-Driven Prompt Optimization</h3>
+        <h3> AudioAgent: Enhancing Task Performance through Modality-Driven Prompt Optimization</h3>
         <!-- <p class="lead fw-bold">
           |<a
             href="https://arxiv.org/abs/2302.03540"
@@ -82,8 +82,7 @@
       <h3>Prompt Optimization<a id="optimization"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples of our Prompt Optimization part. We list Raw, Raw(err), GT, GT(err), Ours. They are instructions without audio
-        feature labels (Raw), Raw with specific grammatical errors (Raw(err)), instructions with audio feature labels (GT), GT with specific grammatical errors (GT(err)), and the result of our model based on Raw(err) and Modality Comprehension.
+        In this section, we provide some examples of our Prompt Optimization part. We list Dirty text w/o labels, Ground Truth(GT), AudioAgent's result. They are instructions without audio. Dirty text w/o labels means inadequate and syntactically incorrect instructions which serve as input in our dataset, GT means the the target output in the dataset. Ours means the result from modality comprehension and prompt optimizaion
       </p>
 
       <div class="container pt-3 table-responsive">
@@ -94,18 +93,16 @@
           <thead>
             <tr>
               <th style="text-align: center">Audio Sample</th>
-              <th style="text-align: center">Raw</th>
-              <th style="text-align: center">Raw(err)</th>
+              <th style="text-align: center">Dirty text w/o labels</th>
               <th style="text-align: center">GT</th>
-              <th style="text-align: center">GT(err)</th>
               <th style="text-align: center">Ours</th>
             </tr>
           </thead>
           <tbody>
-             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-             <tr height=100px> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> </tr>
+             <tr height=100px> <td></td> <td></td> <td></td> <td></td> </tr>
           </tbody>
         </table>
       </div>
@@ -117,7 +114,7 @@
       <h3>Task Enhancement - Speech Transcription <a id="enhancement"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Speech Transcription. The Prompt is the raw input for these 2 Agent. Moreover, the tool in HuggingGPT only support English when receving the raw input, so it behaves poorly in other language.
+        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Speech Transcription. The Prompt is the raw input for these 2 Agent. Moreover, the tool in AudioGPT only support English when receving the raw input, so it behaves poorly in other language.
       </p>
 
       <div class="container pt-3 table-responsive">
@@ -130,8 +127,8 @@
               <th style="text-align: center">Audio Sample</th>
               <th style="text-align: center">Prompt</th>
               <th style="text-align: center">Optimized_Prompt</th>
-              <th style="text-align: center">GT</th>
-              <th style="text-align: center">HuggingGPT</th>
+              <th style="text-align: center">Target Output</th>
+              <th style="text-align: center">AudioGPT</th>
               <th style="text-align: center">Qwen-Audio</th>
               <th style="text-align: center">AudioAgent</th>
             </tr>
@@ -151,7 +148,7 @@
       <h3>Task Enhancement - Speech Translation<a id="Translation"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Speech Transcription. Moreover, the tool in HuggingGPT can't finish the task without language type, so we only provide examples on Qwen-Audio.
+        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Speech Transcription. Moreover, the tool in AudioGPT can't finish the task without language type, so we only provide examples on Qwen-Audio.
       </p>
       
       <div class="container pt-3 table-responsive">
@@ -165,7 +162,7 @@
               <th style="text-align: center">Content</th>
               <th style="text-align: center">Prompt</th>
               <th style="text-align: center">Optimized_Prompt</th>
-              <th style="text-align: center">Possible Answer</th>
+              <th style="text-align: center">Target Output</th>
               <th style="text-align: center">Qwen-Audio</th>
               <th style="text-align: center">AudioAgent</th>
             </tr>
@@ -199,7 +196,7 @@
               <th style="text-align: center">Audio Sample</th>
               <th style="text-align: center">Prompt</th>
               <th style="text-align: center">Optimized_Prompt</th>
-              <th style="text-align: center">HuggingGPT</th>
+              <th style="text-align: center">AudioGPT</th>
               <th style="text-align: center">AudioAgent</th>
             </tr>
           </thead>
