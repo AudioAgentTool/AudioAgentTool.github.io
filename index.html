@@ -45,7 +45,7 @@
       </div>
       <p>
         <b>Abstract.</b>  
-        While Large Language Models (LLMs) demonstrate significant potential as controllers in agent fields, effectively interpreting user instructions and selecting appropriate tools for audio tasks, they currently rely solely on textual input for selection. This reliance, however, overlooks valuable information inherent in the audio modality that could disambiguate user instructions and improve tool selection. To this end, we introduce AudioAgent, a versatile and adaptable agent framework for audio fields. It is the first system that emphasizes audio comprehension and utilizes this information to autonomously refine user-provided instruction by one finetuned LLM. Through clearer instructions, AudioAgent empowers the controller to make more precise selections from our comprehensive audio tool library, ultimately enhancing overall task performance. Our framework also allows users to freely register tools and utilize any LLM as the core controller. Both subjective and objective metrics validate the effectiveness of our work.
+        While Large Language Models (LLMs) demonstrate significant potential as controllers in agent fields, effectively interpreting user instructions and selecting appropriate tools for audio tasks, they rely solely on textual input for selection. This reliance, however, overlooks valuable information inherent in the audio modality that could disambiguate user instructions and improve tool selection. To this end, we introduce AudioAgent, a versatile and adaptable agent framework for audio fields. It is the first system that emphasizes audio comprehension and utilizes this information to refine user-provided instructions by one finetuned LLM autonomously. Through clearer instructions, AudioAgent empowers the controller to make more precise selections from our comprehensive audio tool library, ultimately enhancing overall task performance. Our framework also allows users to freely register tools and utilize any LLM as the core controller. Both subjective and objective metrics validate the effectiveness of our work.
       </p>
     </div>
 
@@ -55,7 +55,7 @@
       <div>
       <p><br/></p>
       <p style="text-align: center;">
-          <img src="arch.png" height="130" width="1040" class="img-fluid">
+          <img src="arch.png" height="160" width="1280" class="img-fluid">
       </p>
       <p><br/></p>
     </div>
@@ -82,7 +82,7 @@
       <h3>Prompt Optimization<a id="optimization"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples of our Prompt Optimization part. We list Dirty text w/o labels, Ground Truth(GT), AudioAgent's result. They are instructions without audio. Dirty text w/o labels means inadequate and syntactically incorrect instructions which serve as input in our dataset, GT means the the target output in the dataset. Ours means the result from modality comprehension and prompt optimizaion
+        In this section, we provide some examples of our Prompt Optimization part. We list Raw Instruction, Ground Truth(GT), AudioAgent's result. Raw Instruction means inadequate instructions which serve as input in our dataset, GT means the the target output in the dataset. Ours means the result from modality comprehension and prompt optimizaion
       </p>
 
       <div class="container pt-3 table-responsive">
@@ -93,7 +93,7 @@
           <thead>
             <tr>
               <th style="text-align: center">Audio Sample</th>
-              <th style="text-align: center">Dirty text w/o labels</th>
+              <th style="text-align: center">Raw Instruction</th>
               <th style="text-align: center">GT</th>
               <th style="text-align: center">Ours</th>
             </tr>
@@ -129,7 +129,7 @@
               <th style="text-align: center">Optimized_Prompt</th>
               <th style="text-align: center">Target Output</th>
               <th style="text-align: center">AudioGPT</th>
-              <th style="text-align: center">Qwen-Audio</th>
+              <th style="text-align: center">Qwen2-Audio</th>
               <th style="text-align: center">AudioAgent</th>
             </tr>
           </thead>
@@ -148,7 +148,7 @@
       <h3>Task Enhancement - Speech Translation<a id="Translation"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Speech Transcription. Moreover, the tool in AudioGPT can't finish the task without language type, so we only provide examples on Qwen-Audio.
+        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Speech Transcription. Moreover, the tool in AudioGPT can't finish the task without language type, so we only provide examples on Qwen2-Audio.
       </p>
       
       <div class="container pt-3 table-responsive">
@@ -163,7 +163,7 @@
               <th style="text-align: center">Prompt</th>
               <th style="text-align: center">Optimized_Prompt</th>
               <th style="text-align: center">Target Output</th>
-              <th style="text-align: center">Qwen-Audio</th>
+              <th style="text-align: center">Qwen2-Audio</th>
               <th style="text-align: center">AudioAgent</th>
             </tr>
           </thead>
@@ -183,7 +183,7 @@
       <h3>Task Enhancement - Audio Enhancement<a id="Audioenhancement"/></h3>
 
       <p style="margin-top: 2em">
-        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Audio Enhancement. Qwen-Audio lacks the ability to finish such task.
+        In this section, we provide some examples to showcase the enhancement by AudioAgent's optimal selection of the suitable tool. Here is Audio Enhancement. Qwen2-Audio lacks the ability to finish such task.
       </p>
 
       <div class="container pt-3 table-responsive">
